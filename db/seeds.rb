@@ -9,11 +9,17 @@
 puts "Cleaning database..."
   Player.destroy_all
   User.destroy_all
+  List.destroy_all
 puts "Done"
 
 puts "Creating users..."
   User.create(email: "contact@eiffy.fr", password: "blacklist")
   User.create(email: "contact@nymph.fr", password: "blacklist")
+puts "Done"
+
+puts "Creating lists..."
+  List.create(name: "blacklist")
+  List.create(name: "whitelist")
 puts "Done"
 
 puts "Creating players..."
