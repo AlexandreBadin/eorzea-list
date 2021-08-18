@@ -10,7 +10,7 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.new(params_player)
-    @player.user = current_user
+    # @player.user = current_user
     if @player.save
       redirect_to list_players_path
     else
