@@ -17,11 +17,6 @@ puts "Creating users..."
   User.create(email: "contact@nymph.fr", password: "blacklist")
 puts "Done"
 
-puts "Creating lists..."
-  List.create(name: "blacklist")
-  List.create(name: "whitelist")
-puts "Done"
-
 puts "Creating players..."
   Player.create(name: "Ei'ffy Khas", server: "Spriggan")
   Player.create(name: "Nymph Astadeviluke", server: "Cerberus")
