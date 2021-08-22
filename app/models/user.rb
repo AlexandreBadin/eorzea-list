@@ -6,4 +6,10 @@ class User < ApplicationRecord
 
   has_many :lists
 
+  after_create :list_creation
+
+  def list_creation
+    List.create!(user: self, name: 'blacklist')
+    List.create!(user: self, name: 'whitelist')
+  end
 end
