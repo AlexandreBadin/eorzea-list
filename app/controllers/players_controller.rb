@@ -12,7 +12,7 @@ class PlayersController < ApplicationController
     @player = Player.new(params_player)
     @player.list = current_user.list
     if @player.save
-      redirect_to list_players_path
+      redirect_to players_path
     else
       render :new
     end
@@ -25,13 +25,13 @@ class PlayersController < ApplicationController
   def update
     @player = Player.find(params[:id])
     @player.update(params_player)
-    redirect_to list_players_path
+    redirect_to players_path
   end
 
   def destroy
     @player = Player.find(params[:id])
     @player.destroy
-    redirect_to list_players_path
+    redirect_to players_path
   end
 
   private
