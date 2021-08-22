@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   # end
   # resources :players, only: [ :new, :create, :edit, :update, :destroy ]
 
-  resources :players, only: [:index, :new, :create, :edit, :update] do
-    resources :lists, only: [:index, :create]
+  resources :players, only: [:index, :new, :create, :edit, :update, :destroy] do
+    resources :lists, only: [:index, :show, :create]
   end
-  resources :players, only: :destroy
 
 end
