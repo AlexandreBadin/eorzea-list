@@ -9,10 +9,12 @@ class PlayersController < ApplicationController
   end
 
   def create
+    @list = List.find(params[:list_id])
+    @list.user = current_user
+    @player.list = @list
     @player = Player.new(params_player)
-    @player.list = current_user.list
     if @player.save
-      redirect_to players_path
+      redirect_to list_players_path
     else
       render :new
     end
