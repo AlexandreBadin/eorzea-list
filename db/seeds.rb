@@ -8,6 +8,8 @@
 
 puts "Cleaning database..."
   User.destroy_all
+  List.destroy_all
+  Player.destroy_all
 puts "Done"
 
 puts "Creating users..."
