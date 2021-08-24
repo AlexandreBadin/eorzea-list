@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>
+    <%= @list.name %>
+  </h2>
+
+  <% @list.players.each do |player| %>
+    <p> <%= player.name %> - <%= player.server %> </p>
+  <% end %>
+  <%= link_to "add player", new_list_player_path(@list), class: "btn btn-primary" %>
+</div>
