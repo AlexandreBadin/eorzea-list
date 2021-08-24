@@ -5,16 +5,18 @@ class PlayersController < ApplicationController
   end
 
   def new
-    @players = Player.new
+    @list = List.find(params[:list_id])
+    @player = Player.new
+
   end
 
   def create
-    @list = List.find(params[:list_id])
-    @list.user = current_user
-    @player.list = @list
     @player = Player.new(params_player)
-    if @player.save
-      redirect_to list_players_path
+    @list = List.find(params[:list_id])
+    @player.list = @list
+
+    if @player.save!
+      redirect_to list_path(@list), notice: 'Player was successfully created!'
     else
       render :new
     end

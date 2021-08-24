@@ -1,12 +1,6 @@
-<h1>EORZEA LIST</h1>
+<h1>MY LISTS</h1>
 
-<% @lists.each do |list| %>
-  <h2><%= list.name.upcase %> (<%= list.players.count %>)</h2>
-  <% if list.players.count == 0 %>
-    <p>Uh oh... This list seems empty...</p>
-  <% else %>
-    <% list.players.each do |player| %>
-      <p><%= player.name %> - <%= player.server %></p>
-    <%end%>
-  <% end %>
+<% @user.lists.each do |list| %>
+  <%= list.name %>
+  <%= link_to "see list", list_path(list), class: "btn btn-primary" %>
 <% end %>
