@@ -1,4 +1,5 @@
 class PlayersController < ApplicationController
+  before_action :set_player, only: [:show, :edit, :update, :destroy]
 
   def index
     @players = Player.all
@@ -23,22 +24,26 @@ class PlayersController < ApplicationController
   end
 
   def edit
-    @player = Player.find(params[:id])
   end
 
   def update
-    @player = Player.find(params[:id])
-    @player.update(params_player)
-    redirect_to list_path
+    if @player.update(params_player)
+     redirect_to list_path(@player.list), notice: 'Player was successfully updated'
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @player = Player.find(params[:id])
     @player.destroy
-    redirect_to list_path
+    redirect_to list_path(@player.list), notice: 'Player was successfully destroyed'
   end
 
   private
+
+  def set_player
+    @player = Player.find(params[:id])
+  end
 
   def params_player
     params.require(:player).permit(:name, :server)

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :lists, only: [ :index, :show ] do
-    resources :players, only: [ :new, :create, :edit, :update ]
+    resources :players, only: [ :new, :create ]
   end
-  resources :players, only: [ :destroy ]
+  resources :players, only: [ :edit, :update, :destroy ]
 end
