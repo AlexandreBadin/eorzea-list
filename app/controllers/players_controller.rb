@@ -29,13 +29,13 @@ class PlayersController < ApplicationController
   def update
     @player = Player.find(params[:id])
     @player.update(params_player)
-    redirect_to players_path
+    redirect_to list_path
   end
 
   def destroy
     @player = Player.find(params[:id])
     @player.destroy
-    redirect_to players_path
+    redirect_to list_path
   end
 
   private

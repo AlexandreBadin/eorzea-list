@@ -4,7 +4,11 @@
   </h2>
 
   <% @list.players.each do |player| %>
-    <p> <%= player.name %> - <%= player.server %> </p>
+    <p><%= player.name %> - <%= player.server %></p>
+    <%= link_to 'delete', player, method: :delete, data: {confirm: 'are u sure?'}, remote: true, class: 'btn btn-warning' %>
   <% end %>
+
+  <br><br> <!-- A SUPPRIMER PLUS TARD -->
+
   <%= link_to "add player", new_list_player_path(@list), class: "btn btn-primary" %>
 </div>
