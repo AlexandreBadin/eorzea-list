@@ -1,10 +1,12 @@
-<h1>GRATZ !</h1>
-<p>T'as réussi à afficher l'index de lists ... go afficher BL et WL maintenant, si tu n'y arrive pas, tu es un <strong>ROY</strong> !</p>
+<h1>EORZEA LIST</h1>
 
-<div class="blacklist">
-  <%= List.first.name.upcase %>
-</div>
-
-<div class="whitelist">
-  <%= List.last.name.upcase %>
-</div>
+<% @lists.each do |list| %>
+  <h2><%= list.name.upcase %> (<%= list.players.count %>)</h2>
+  <% if list.players.count == 0 %>
+    <p>Uh oh... This list seems empty...</p>
+  <% else %>
+    <% list.players.each do |player| %>
+      <p><%= player.name %> - <%= player.server %></p>
+    <%end%>
+  <% end %>
+<% end %>
