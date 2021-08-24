@@ -5,6 +5,9 @@
 
   <% @list.players.each do |player| %>
     <p><%= player.name %> - <%= player.server %></p>
+
+    <%= link_to "edit", edit_player_path(player), class: "btn btn-primary" %>
+
     <%= link_to 'delete', player, method: :delete, data: {confirm: 'are u sure?'}, remote: true, class: 'btn btn-warning' %>
   <% end %>
 
