@@ -1,23 +1,25 @@
 class ListsController < ApplicationController
 
+  # GET /lists
   def index
     @lists = List.all
     @user = current_user
   end
 
+  # GET /lists/:id
   def show
     @list = List.find(params[:id])
   end
 
-  def create
-    @list = List.new(params_list)
-    @list.user = current_user
-    if @list.save
-      redirect_to player_lists_path
-    else
-      render :new
-    end
-  end
+  # def create
+  #   @list = List.new(params_list)
+  #   @list.user = current_user
+  #   if @list.save
+  #     redirect_to player_lists_path
+  #   else
+  #     render :new
+  #   end
+  # end
 
   private
 
