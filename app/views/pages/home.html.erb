@@ -3,6 +3,18 @@
 
 <%= link_to 'see my lists', lists_path, class: 'btn btn-warning' %>
 
+
+<% @lists.each do |list| %>
+
+  <%= simple_form_for [ list, @player]  do |f| %>
+    <%= f.input :name %>
+    <%= f.input :server %>
+    <%= f.submit list.name, class: "btn btn-primary" %>
+  <% end %>
+
+<% end %>
+
+
 </div>
 
 

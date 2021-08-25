@@ -4,7 +4,7 @@
   <%= simple_form_for [ @list, @player ] do |f| %>
     <%= f.input :name %>
     <%= f.input :server %>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
+    <%= f.submit @list.name, class: "btn btn-primary" %>
   <% end %>
 
 </div>
