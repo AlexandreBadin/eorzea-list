@@ -1,19 +1,8 @@
 <div class="container">
  <h1>Eorzea List</h1>
 
-<%= link_to 'see my lists', lists_path, class: 'btn btn-warning' %>
-
-
-<% @lists.each do |list| %>
-
-  <%= simple_form_for [ list, @player]  do |f| %>
-    <%= f.input :name %>
-    <%= f.input :server %>
-    <%= f.submit list.name, class: "btn btn-primary" %>
-  <% end %>
-
-<% end %>
-
+<%= link_to 'link Sign in with Discord', user_discord_omniauth_authorize_path, method: :post, class: 'btn btn-secondary' %>
+<%= button_to 'button Sign in with Discord', user_discord_omniauth_authorize_path, class: 'btn btn-secondary' %>
 
 </div>
 
