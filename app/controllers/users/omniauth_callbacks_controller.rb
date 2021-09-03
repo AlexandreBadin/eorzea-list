@@ -1,5 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-skip_before_action :verify_authenticity_token, only: :discord
+# skip_before_action :verify_authenticity_token, only: :discord
 
   def discord
     # You need to implement the method below in your model (e.g. app/models/user.rb)
