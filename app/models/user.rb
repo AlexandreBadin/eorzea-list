@@ -8,17 +8,21 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:discord]
 
+
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.provider = auth.provider
-      user.username = auth.info.username
-      user.uid = auth.uid
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0, 20]
-      # user.avatar_url = auth.info.avatar_url
-      # If you are using confirmable and the provider(s) you use validate emails,
-      # uncomment the line below to skip the confirmation emails.
-      # user.skip_confirmation!
+    user = User.where(email: auth.info.email).first
+    if user
+      return user
+    else
+      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+        user.username = auth.extra.raw_info.username
+        user.discriminator = auth.extra.raw_info.discriminator
+        user.provider = auth.provider
+        user.uid = auth.uid
+        user.email = auth.info.email
+        user.avatar_url = auth.info.image
+        user.password = Devise.friendly_token[0, 20]
+      end
     end
   end
 
@@ -28,4 +32,5 @@ class User < ApplicationRecord
     List.create!(user: self, name: 'blacklist')
     List.create!(user: self, name: 'whitelist')
   end
+
 end
