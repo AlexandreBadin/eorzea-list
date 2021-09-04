@@ -1,12 +1,17 @@
-.navbar-lewagon {
+.navbar {
+  height: 120px;
+  padding: 0 40px;
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+    h1 {
+      font-weight: bold;
+      letter-spacing: 4px;
+    }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.username-discriminator {
+  font-size: 16px;
 }
