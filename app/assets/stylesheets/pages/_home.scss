@@ -1,1 +1,19 @@
 // Specific CSS for your home-page
+
+.sides-container {
+  display: flex;
+}
+
+.white-side, .black-side {
+  width: 50%;
+  height: 100vh;
+  padding: 40px;
+}
+
+.black-side {
+  background-color: #181820;
+}
+
+.white-side {
+  background-color: #F3F4FB;
+}
