@@ -1,10 +1,16 @@
 .lists-btn {
-  font-size: 16px;
+  font-size: 24px;
   color: black;
-  letter-spacing: 4px;
+  transition-duration: .4s;
+  color: #F3F4FB;
 
   &:hover {
-    color: lightgrey;
+    color: #F3F4FB;
     text-decoration: none;
+  }
+
+  .fa-list {
+    margin-right: 16px;
+    color: #F3F4FB;
   }
 }
