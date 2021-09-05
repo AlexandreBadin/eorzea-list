@@ -36,7 +36,9 @@
 
 
 <div class="navbar">
-  <h1>E<span style="color: red">O</span>RZEA LIST</h1>
+  <%= link_to (root_path), class: "navbar-brand", style: "color: black" do %>
+    <h1>E<span style="color: #FF5151">O</span>RZEA LIST</h1>
+  <% end %>
 
   <%= link_to lists_path, class: 'lists-btn' do %>
     <i class="fas fa-list"></i>

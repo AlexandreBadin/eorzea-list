@@ -1,17 +1,23 @@
 .navbar {
+  position: fixed;
+  width: 100%;
   height: 120px;
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-color: rgba(0, 0, 0, 0.2);
+
 
     h1 {
       font-weight: bold;
       letter-spacing: 4px;
+      color: #F3F4FB;
     }
 }
 
 .username-discriminator {
   font-size: 16px;
+  color: #F3F4FB;
 }
