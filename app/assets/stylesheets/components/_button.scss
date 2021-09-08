@@ -11,6 +11,7 @@
   font-size: 16px;
   color: #F3F4FB;
   transition-duration: .4s;
+  font-weight: 400;
 
   &:hover {
     color: #F3F4FB;
@@ -30,16 +31,16 @@
   align-items: center;
   color: #F3F4FB;
   font-size: 16px;
-  font-weight: lighter;
   background-color: #5661F5;
-  padding: 8px;
+  padding: 8px 16px;
   border-radius: 4px;
+  letter-spacing: 1px;
 
   &:hover {
     color: #F3F4FB;
     text-decoration: none;
     cursor: pointer;
-    opacity: .4;
+    background-color: #444CC2;
   }
 
   .fa-discord {

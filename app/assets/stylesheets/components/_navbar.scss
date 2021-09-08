@@ -1,3 +1,4 @@
+// NAVBAR BASICALS SETTINGS
 .navbar {
   position: fixed;
   width: 100%;
@@ -7,5 +8,25 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(33, 33, 43, .2);
+}
+
+// DROPDOWN MENU NAVBAR AVATAR
+.dropdown-menu {
+  background-color: #21212B;
+  width: 100%;
+  height: auto;
+  padding: 16px 0;
+  border-radius: 4px;
+  
+  
+  .dropdown-item {
+    color: #F3F4FB;
+    font-size: 16px;
+
+    &:hover {
+      color: #F3F4FB;
+      background-color: #181820;
+    }
+  }
 }
