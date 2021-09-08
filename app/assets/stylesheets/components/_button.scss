@@ -1,10 +1,49 @@
+//BUTTON EORZEA LIST
+#btn-home {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: #F3F4FB;
+}
+
+//BUTTON LISTS
 .lists-btn {
   font-size: 16px;
-  color: black;
-  letter-spacing: 4px;
+  color: #F3F4FB;
+  transition-duration: .4s;
 
   &:hover {
-    color: lightgrey;
+    color: #F3F4FB;
+    opacity: .4;
     text-decoration: none;
+  }
+
+  .fa-list {
+    margin-right: 16px;
+    color: #F3F4FB;
+  }
+}
+
+//BUTTON DISCORD
+.btn-discord {
+  display: flex;
+  align-items: center;
+  color: #F3F4FB;
+  font-size: 16px;
+  font-weight: lighter;
+  background-color: #5661F5;
+  padding: 8px;
+  border-radius: 4px;
+
+  &:hover {
+    color: #F3F4FB;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .4;
+  }
+
+  .fa-discord {
+    font-size: 24px;
+    margin-right: 8px;
   }
 }
