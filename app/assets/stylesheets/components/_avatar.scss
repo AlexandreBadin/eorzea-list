@@ -1,9 +1,12 @@
 //AVATAR DISCORD
-#user-avatar {
+.user-avatar {
   width: 56px;
   border-radius: 50%;
   margin-right: 8px;
-  border: 1px solid white;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 //DISCORD DISCRIMINATOR (username#0000)
