@@ -1,25 +1,19 @@
 // Specific CSS for your home-page
 
 // SIDES CONTAINER SETTINGS
-.sides-container {
-  display: flex;
-  background-image: asset-url('background.jpg');
+
+.page-home{
   background-size: cover;
+  background-position: center;
 }
 
 // WHITE SIDE & BLACK SIDE BASICALS SETTINGS
-.white-side, .black-side {
-  width: 50%;
-  height: 100vh;
-  background-color: transparent;
-  padding: 24px;
-}
 
 .white-side-content, .black-side-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
+  width: 50%;
+  height: 200px;
+  padding: 24px;
+
 
   h2 {
     font-size: 80px;

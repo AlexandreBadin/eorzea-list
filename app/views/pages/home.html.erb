@@ -1,43 +1,37 @@
-<div class="sides-container">
+<div class="page-home" style="background-image: url('/assets/background.jpg');">
+  <div class="container home-container">
+    <div class="home-sides-container">
 
-  <!-- WHITE SIDES -->
-  <div class="white-side">
-    <div class="white-side-content">
-
-      <div class="white-side-title">
-        <h2 style="color: #F3F4FB">E<span style="color: #FF5151">O</span>RZEA</h2>
+      <!-- WHITE SIDES -->
+      <div class="white-side-content">
+        <div class="white-side-title">
+          <h2 style="color: #F3F4FB">E<span style="color: #FF5151">O</span>RZEA</h2>
+        </div>
       </div>
 
-      <div class="white-side-character-search">
-        <p>Enter character's name you want to add to your white list</p>
-
-        <div class="white-list-search-bar">
-          <input type="text" placeholder="Character's name" class="white-list-search-character">
-          <input type="submit" value="WHITE LIST" class="white-list-btn">
+      <!-- BLACK SIDES -->
+      <div class="black-side-content">
+        <div class="black-side-title">
+          <h2 style="color: #FF5151">LIST</h2>
         </div>
-
       </div>
     </div>
-  </div>
-  
-  <!-- BLACK SIDES -->
-  <div class="black-side">
-    <div class="black-side-content">
 
-      <div class="black-side-title">
-        <h2 style="color: #FF5151">LIST</h2>
+
+    <% if user_signed_in? %>
+      <div class="home-character-search d-flex justify-content-between">
+        <% @lists.each do |list| %>
+          <div class="home-character-search-bar">
+            <p>Enter character's name you want to add to your <%= list.name %></p>
+            <%= simple_form_for ([list, @player]) do |f| %>
+              <%= f.input :name, placeholder: "Character's name", label:false %>
+              <%= f.input :server, placeholder: "Server", label:false %>
+              <%= f.submit list.name, class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
+    <% end %>
 
-      <div class="black-side-character-search">
-        <p>Enter character's name you want to add to your black list</p>
-
-        <div class="black-list-search-bar">
-          <input type="text" placeholder="Character's name" class="black-list-search-character">
-          <input type="submit" value="BLACK LIST" class="black-list-btn">
-        </div>
-
-      </div>
-    </div>
   </div>
-
 </div>
