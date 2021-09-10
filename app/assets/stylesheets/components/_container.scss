@@ -1,0 +1,17 @@
+.container{
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.home-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.home-sides-container{
+  display: flex;
+  margin-bottom: 64px;
+}
