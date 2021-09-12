@@ -48,3 +48,25 @@
     margin-right: 8px;
   }
 }
+
+// CARDS ARROW BTN
+.fa-chevron-down {
+  font-size: 24px;
+  color: $pale-red;
+}
+
+// REDS BTN
+.card-btn {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 4px 24px;
+  color: $pale-white;
+  background-color: $pale-red;
+  border-radius: 4px;
+
+  &:hover {
+    color: $pale-white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

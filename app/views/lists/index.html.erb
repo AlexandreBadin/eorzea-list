@@ -1,6 +1,53 @@
-<h1>MY LISTS</h1>
+<div class="container">
+  <div class="lists-container">
 
-<% @user.lists.each do |list| %>
-  <%= list.name %>
-  <%= link_to "see list", list_path(list), class: "btn btn-primary" %>
-<% end %>
+    <div class="lists-selection">
+      <% @user.lists.each do |list| %>
+        <h2 class="selected-list"><%= link_to "#{list.name} (#{list.players.count})", list_path(list) %></h2>
+      <% end %>
+    </div>
+
+    <div class="lists-buttons">
+      <%= button_to "||| Filters" %>
+      <%= button_to "+ Add Character" %>
+    </div>
+
+    <div class="cards-container">
+      <% @user.lists.each do |list| %>
+        <% list.players.each do |player| %>
+
+          <div class="character-card">
+            <a href=""><img src="https://via.placeholder.com/80" alt="character's avatar" class="character-avatar"></a>
+
+            <div class="character-content">
+              <h2><%= player.name.upcase %></h2>
+
+              <div class="character-info">
+                <p><%= player.server %></p>
+
+                <div class="character-profile-links">
+                  <%= link_to 'https://fr.fflogs.com/', id: 'fflogs-btn', target: '_blank' do %>
+                    <i class="far fa-chart-bar"></i>
+                  <% end %>
+
+                  <%= link_to 'https://fr.finalfantasyxiv.com/lodestone/', id: 'lodestone-btn', target: '_blank' do %>
+                    <i class="fas fa-address-card"></i>
+                  <% end %>
+                </div>
+              </div>
+
+              <div class="character-card-btn">
+                <%= link_to "Updated", edit_player_path(player), class: "card-btn" %>
+                <%= link_to 'Deleted', player, method: :delete, data: {confirm: 'are u sure?'}, remote: true, class: 'card-btn' %>
+              </div>
+
+            </div> 
+
+            <!-- <i class="fas fa-chevron-down"></i> -->
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

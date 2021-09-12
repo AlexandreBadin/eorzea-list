@@ -1,0 +1,19 @@
+// CHARACTERS'S CARDS
+
+.character-card {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $light-blue;
+  color: $pale-white;
+  border-radius: 4px;
+}
+
+.character-content {
+  flex-grow: 1;
+}
+
+.character-info {
+  display: flex;
+}
