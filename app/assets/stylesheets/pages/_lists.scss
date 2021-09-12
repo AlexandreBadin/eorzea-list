@@ -1,0 +1,17 @@
+// lists#index
+
+.lists-container {
+  height: 100vh;
+  padding-top: 96px;
+  background-color: $dark-blue;
+
+  .lists-selection, .lists-buttons {
+    display: flex;
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+  }
+}
