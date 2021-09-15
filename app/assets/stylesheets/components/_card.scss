@@ -58,4 +58,9 @@
   background-color: $pale-red;
   padding: 4px 32px;
   border-radius: 4px;
+
+  &:hover {
+    color: $pale-white;
+    text-decoration: none;
+  }
 }
