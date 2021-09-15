@@ -1,45 +1,44 @@
 <div class="container">
   <div class="lists-container">
 
-    <div class="lists-menu" style="color: white">
+    <div class="inline-menu">
       <% @user.lists.each do |list| %>
-        <h2><%= link_to "#{list.name} (#{list.players.count})", list_path(list) %></h2>
+        <h2><%= link_to "#{list.name.upcase} (#{list.players.count})", list_path(list), class:'list-selection-btn active' %></h2>
+      <% end %>
+    </div>
 
-        <div class="list-player">
-          <div class="cards-container">
+    <div class="list-player">
+      <div class="cards-container">
 
-           
-            <% list.players.each do |player| %>
+        <% @user.lists.each do |list| %>
+          <% list.players.each do |player| %>
 
-              <div class="character-card">
-                <img src="https://i.pravatar.cc/100" alt="character's face" class='character-avatar'>
-                <div class="character-card-content">
-                  <h3><%= player.name.upcase %></h3>
-                  <div class="character-card-info">
-                    <p>Chaos - <%= player.server.capitalize %> (EU)</p>
-                    <div class="website-btn">
-                      <%= link_to 'https://fr.fflogs.com/', target: '_blank' do %>
-                        <i class="far fa-chart-bar" id='fflogs-btn'></i>
-                      <% end %>
-                      <%= link_to 'https://fr.finalfantasyxiv.com/lodestone/', target: '_blank' do %>
-                        <i class="fas fa-address-card" id='lodestone-btn' ></i>
-                      <% end %>
-                    </div>
-                  </div>
-                  <div class="character-card-actions">
-                    <%= link_to 'Edit', edit_player_path(player), class: 'action-btn' %>
-                    <%= link_to 'Delete', player, method: :delete, data: {confirm: 'are u sure?'}, remote: true, class: 'action-btn' %>
+            <div class="character-card">
+              <img src="https://i.pravatar.cc/100" alt="character's face" class='character-avatar'>
+              <div class="character-card-content">
+                <h3><%= player.name.upcase %></h3>
+                <div class="character-card-info">
+                  <p>Chaos - <%= player.server.capitalize %> (EU)</p>
+                  <div class="website-btn">
+                    <%= link_to 'https://fr.fflogs.com/', target: '_blank' do %>
+                      <i class="far fa-chart-bar" id='fflogs-btn'></i>
+                    <% end %>
+                    <%= link_to 'https://fr.finalfantasyxiv.com/lodestone/', target: '_blank' do %>
+                      <i class="fas fa-address-card" id='lodestone-btn' ></i>
+                    <% end %>
                   </div>
                 </div>
+                <div class="character-card-actions">
+                  <%= link_to 'Edit', edit_player_path(player), class: 'action-btn' %>
+                  <%= link_to 'Delete', player, method: :delete, data: {confirm: 'are u sure?'}, remote: true, class: 'action-btn' %>
+                </div>
               </div>
+            </div>
 
-            <% end %>
-          
+          <% end %>
+        <% end %>
 
-          </div>
-        </div>
-
-      <% end %>
+      </div>
     </div>
 
   </div>

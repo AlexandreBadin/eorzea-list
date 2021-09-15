@@ -4,14 +4,30 @@
   height: 100vh;
   padding-top: 96px;
   background-color: $dark-blue;
+}
 
-  .lists-selection, .lists-buttons {
-    display: flex;
-  }
+.inline-menu {
+  display: flex;
+  border-bottom: 1px solid rgba(243, 244, 251, .4);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
 
-  .cards-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 16px;
+  .list-selection-btn {
+    color: $pale-white;
+    margin-right: 24px;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:active {
+      padding-bottom: 16px;
+      border-bottom: 2px solid $pale-red;
+    }
   }
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
 }
