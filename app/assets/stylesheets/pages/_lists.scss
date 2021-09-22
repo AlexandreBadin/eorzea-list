@@ -1,8 +1,7 @@
 // lists#index
-
 .lists-container {
   height: 100vh;
-  padding-top: 96px;
+  padding-top: 120px;
   background-color: $dark-blue;
 }
 
@@ -21,11 +20,13 @@
     }
 
     &:active {
+      font-weight: bold;
       padding-bottom: 16px;
       border-bottom: 2px solid $pale-red;
     }
   }
 }
+
 .cards-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
