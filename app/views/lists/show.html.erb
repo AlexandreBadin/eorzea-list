@@ -1,17 +1,34 @@
-<div class="container">
-  <h2>
-    <%= @list.name %>
-  </h2>
 
-  <% @list.players.each do |player| %>
-    <p><%= player.name %> - <%= player.server %></p>
-
-    <%= link_to "edit", edit_player_path(player), class: "btn btn-primary" %>
-
-    <%= link_to 'delete', player, method: :delete, data: {confirm: 'are u sure?'}, remote: true, class: 'btn btn-warning' %>
-  <% end %>
-
-  <br><br> <!-- A SUPPRIMER PLUS TARD -->
-
-  <%= link_to "add player", new_list_player_path(@list), class: "btn btn-primary" %>
+<div class="list-player">
+  <div class="cards-container">
+    
+    <% if @players.count == 0 %>
+      <h3 style="color: white">Uh oh... This list seems empty...</h3> <!-- style à supprimer plus tard -->
+    <% else %>
+      <% @players.each do |player| %>
+        <div class="character-card">
+          <img src="https://i.pravatar.cc/100" alt="character's face" class='character-avatar'>
+          <div class="character-card-content">
+            <h3><%= player.name.upcase %></h3>
+            <div class="character-card-info">
+              <p>Chaos - <%= player.server.capitalize %> (EU)</p>
+              <div class="website-btn">
+                <%= link_to 'https://fr.fflogs.com/', target: '_blank' do %>
+                  <i class="far fa-chart-bar" id='fflogs-btn'></i>
+                <% end %>
+                <%= link_to 'https://fr.finalfantasyxiv.com/lodestone/', target: '_blank' do %>
+                  <i class="fas fa-address-card" id='lodestone-btn' ></i>
+                <% end %>
+              </div>
+            </div>
+            <div class="character-card-actions">
+              <%= link_to 'Edit', edit_player_path(player), class: 'action-btn' %>
+              <%= link_to 'Delete', player, method: :delete, data: {confirm: 'are u sure?'}, remote: true, class: 'action-btn' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    
+  </div>
 </div>
