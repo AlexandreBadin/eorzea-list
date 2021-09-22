@@ -5,7 +5,7 @@
     <% end %>
 
     <% if user_signed_in? %>
-      <%= link_to lists_path, class: 'lists-btn' do %>
+      <%= link_to lists_path, class: "lists-btn #{'clicked' if current_page? lists_path(@list)}" do %>
         <i class="fas fa-list"></i>
         My Lists
       <% end %>

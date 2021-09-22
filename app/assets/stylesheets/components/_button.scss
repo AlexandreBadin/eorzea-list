@@ -25,6 +25,13 @@
   }
 }
 
+.clicked {
+  color: $pale-white;
+  background-color: $pale-red;
+  padding: 4px 16px;
+  border-radius: 4px;
+}
+
 //BUTTON DISCORD
 .btn-discord {
   display: flex;

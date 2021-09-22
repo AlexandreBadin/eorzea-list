@@ -3,7 +3,7 @@
 
     <div class="inline-menu">
       <% @user.lists.each do |list| %>
-        <h2><%= link_to "#{list.name.upcase} (#{list.players.count})", list_path(list), class:'list-selection-btn active' %></h2>
+        <h2><%= link_to "#{list.name.upcase} (#{list.players.count})", list_path(list), class:'list-selection-btn' %></h2>
       <% end %>
     </div>
 
