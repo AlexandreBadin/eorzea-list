@@ -1,11 +1,15 @@
 
 <div class="list-player">
   <div class="cards-container">
-    
+    <!-- si le nombre de players est égal à zero -->
     <% if @players.count == 0 %>
+      <!-- alors affiche que la liste est vide -->
       <h3 style="color: white">Uh oh... This list seems empty...</h3> <!-- style à supprimer plus tard -->
+    <!-- sinon -->
     <% else %>
+      <!-- pour chacuns de players de la liste -->
       <% @players.each do |player| %>
+       <!-- crée une card  -->
         <div class="character-card">
           <img src="https://i.pravatar.cc/100" alt="character's face" class='character-avatar'>
           <div class="character-card-content">
